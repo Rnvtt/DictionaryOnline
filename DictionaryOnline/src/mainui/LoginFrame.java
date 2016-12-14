@@ -1,28 +1,30 @@
 package mainui;
 
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
-import config.MainFrameConfig;
+import config.LoginFrameConfig;
 import util.UIFactory;
 /**
  * A Controller
  */
-public class MainFrame extends JFrame{
+public class LoginFrame extends JFrame{
 
 	private static final long serialVersionUID = 8328872782891372697L;
 	
-	public MainFrame() {
+	public LoginFrame() {
 		init();
 	}
 	
 	private void init() {
-		this.setTitle("Squirrel & Big Pang's Dictionary");
-		int width = MainFrameConfig.WIDTH;
-		int height = MainFrameConfig.HEIGHT;
+		this.setTitle("sign up/login in");
+		int width = LoginFrameConfig.WIDTH;
+		int height = LoginFrameConfig.HEIGHT;
 		
 		this.setSize(width,height);
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -34,18 +36,19 @@ public class MainFrame extends JFrame{
 		this.setLayout(null);
 		this.setResizable(false);
 		this.setVisible(true);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	private void initComponent() {
 		Container container = getContentPane();
-		container.add(UIFactory.getQueryButtonInstance());
-		container.add(UIFactory.getWordContentInstance());
+
+		//container.add(UIFactory.getWordInputFieldInstance());
+		container.add(UIFactory.getLoginUIInstance());
+/*		container.add(UIFactory.getWordContentInstance());
 		container.add(UIFactory.getWordContent_Youdao());
 		container.add(UIFactory.getWordContent_ICIBA());
 		container.add(UIFactory.getWordInputFieldInstance());
-		container.add(UIFactory.getLoginButtonInstance());
-//		container.add(UIFactory.getWordListInstance());
+		container.add(UIFactory.getLoginButtonInstance());*/
 	}
 
 	

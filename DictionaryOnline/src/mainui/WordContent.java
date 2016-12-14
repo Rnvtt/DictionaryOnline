@@ -1,7 +1,11 @@
 package mainui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Panel;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -20,7 +24,7 @@ public class WordContent extends JPanel{
 	
 	private WordPanel translation;
 	
-	private JLabel img;
+	private JLabel img,sendButton;
 	
 	public WordContent() {
 		setLayout(null);
@@ -46,7 +50,9 @@ public class WordContent extends JPanel{
 		
 		public WordPanel() {
 			setBounds(0, 40, WordContentConfig.WIDTH, WordContentConfig.HEIGHT - 40);
-			setLayout(null);
+			//setLayout(null);
+			JPanel p1 = new JPanel();
+			p1.setLayout(new BorderLayout());
 			wordName = new JLabel("");
 			wordName.setBounds(20, 0, this.getWidth()-40, 50);
 			wordDescription = new JLabel("");
@@ -57,8 +63,14 @@ public class WordContent extends JPanel{
 			Font name = wordName.getFont();
 			wordName.setFont(new Font(name.getFontName(),Font.BOLD,name.getSize() + 10));
 			wordDescription.setForeground(Color.orange);
+			//add(wordName);
+			p1.add(wordDescription,BorderLayout.CENTER);
+			//sendButton = new JLabel(new ImageIcon("sendButton.png"));
+			//sendButton.setBounds(0, 1, 20, 20);
+			//p1.add(sendButton,BorderLayout.EAST);
+			setLayout(new GridLayout(2,1));
 			add(wordName);
-			add(wordDescription);
+			add(p1);
 		}
 		
 		private void updateContent(WordInfo te) {

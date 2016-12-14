@@ -2,11 +2,14 @@ package util;
 
 import mainui.MainFrame;
 import mainui.QueryButton;
+import mainui.LoginButton;
 import mainui.WordContent;
 import mainui.WordContent_ICIBA;
 import mainui.WordContent_Youdao;
 import mainui.WordInputField;
 import mainui.WordList;
+import mainui.LoginFrame;
+import mainui.LoginUI;
 
 /**
  * 鐢变簬鎵�鏈塁omponent閮芥槸鍞竴鐨勶紝鍥犳涓嶅Θ鍏ㄩ儴閫氳繃Factory璁块棶锛屼互纭繚鍗曚竴瀵硅薄
@@ -15,11 +18,14 @@ public class UIFactory {
 	
 	private static MainFrame frame;
 	private static QueryButton queryButton;
+	private static LoginButton loginButton;
 	private static WordContent wordContent;
 	private static WordContent_Youdao wordContent_Youdao;
 	private static WordContent_ICIBA wordContent_ICIBA;
 	private static WordInputField wordInputField;
 	private static WordList wordList;
+	private static LoginFrame loginFrame;
+	private static LoginUI loginUI;
 	
 	public static MainFrame getMainFrameInstance() {
 		if(frame == null) {
@@ -33,6 +39,13 @@ public class UIFactory {
 			queryButton = new QueryButton();
 		}
 		return queryButton;
+	}
+	
+	public static LoginButton getLoginButtonInstance() {
+		if(loginButton == null) {
+			loginButton = new LoginButton();
+		}
+		return loginButton;
 	}
 	
 	public static WordContent getWordContentInstance() {
@@ -72,4 +85,17 @@ public class UIFactory {
 		return wordList;
 	}
 	
+	public static LoginFrame getLoginFrameInstance() {
+		if(loginFrame == null) {
+			loginFrame = new LoginFrame();
+		}
+		return loginFrame;
+	}
+	
+	public static LoginUI getLoginUIInstance() {
+		if(loginUI == null) {
+			loginUI = new LoginUI();
+		}
+		return loginUI;
+	}
 }
